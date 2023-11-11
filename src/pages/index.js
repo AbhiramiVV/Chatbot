@@ -16,6 +16,14 @@ export default function Home() {
     setChatLog((prevChatLog) => [...prevChatLog,{type:'user',message:inputValue}])
     setInputValue('');
   }
+
+  const sendMessage = (message) => {
+    const url ='https://api.openai.com/v1/completions';
+    const headers = {
+      'Content-type' : 'application/json',
+      'Authorization' :`Bearer ${process.env.NEXT_PUBLIC_API_KEY}`
+    }
+  }
   return (
    <>
    <h1>ChatGPT</h1>
